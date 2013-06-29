@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
+}
+
+configurations {
+    sdk
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+// ANTLR3 grammar
+
+dependencies {
+}
+
+task compile(dependsOn: 'compileJava')
