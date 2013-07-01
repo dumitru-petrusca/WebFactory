@@ -27,6 +27,7 @@ repositories {
 // ANTLR3 grammar
 
 dependencies {
+    compile group: 'edu.uci.ics', name: 'crawler4j', version: '3.5'
 }
 
 task compile(dependsOn: 'compileJava')
