@@ -15,7 +15,7 @@ sourceSets {
             srcDir 'src'
         }
         resources {
-            srcDir 'resources'
+            srcDir 'resources'            
         }
     }
 }
@@ -30,4 +30,11 @@ dependencies {
     compile group: 'edu.uci.ics', name: 'crawler4j', version: '3.5'
 }
 
-task compile(dependsOn: 'compileJava')
+task run ( dependsOn: 'classes', type: JavaExec) {
+    main = 'org.WebFactory.WebFactory'
+    classpath = sourceSets.main.runtimeClasspath
+    //args 'mrhaki'
+    //systemProperty 'simple.message', 'Hello '
+}
+
+task compile (dependsOn: 'compileJava')
